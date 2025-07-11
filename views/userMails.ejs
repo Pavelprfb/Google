@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mails of <%= email %></title>
+  <link rel="stylesheet" href="/css/userMails.css" />
+</head>
+<body>
+  <h2>Mails of <%= email %></h2>
+
+  <a href="/view" class="back-link">← Back to User List</a>
+
+  <div class="container">
+    <% if (mails.length > 0) { %>
+      <% mails.forEach(mail => { %>
+        <div class="mail-item" title="<%= mail.subject || 'No Subject' %>">
+          <div class="mail-header">
+            <div class="mail-from"><%= mail.from %></div>
+            <!-- আপনি যদি তারিখ দেখাতে চান, তাহলে সেই ডেটা যুক্ত করতে পারেন -->
+          </div>
+          <div class="mail-subject"><%= mail.subject || '(No Subject)' %></div>
+          <div class="mail-snippet"><%= mail.snippet %></div>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p style="text-align:center; color:#888;">No mails found.</p>
+    <% } %>
+  </div>
+</body>
+</html>a

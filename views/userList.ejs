@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Emails</title>
+  <link rel="stylesheet" href="/css/userList.css" />
+</head>
+<body>
+  <h2>All User Emails</h2>
+  <ul>
+    <% users.forEach(user => { %>
+      <li>
+        <a href="/view/<%= encodeURIComponent(user.email) %>">
+          <%= user.email %>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+  <hr>
+  <a href="/">Home</a>
+</body>
+</html>
